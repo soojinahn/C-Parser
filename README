@@ -1,22 +1,14 @@
-This is a multi-part assignment.
+The project is broken into the following: token definitions, parser, and interpreter.
 
-The pulldown on the upper left lets you select
-which part you are working on.
+The language has the following grammar rules:
 
-The runcase shell script is provided to allow you
-to run just a single test case.
-
-If you type "runcase" you will get a list of all the
-test cases, and what arguments are used for each case.
-
-If you type "runcase X" you will run only one case.
-For example, "runcase file6" will run test case "file6".
-
-DO NOT EDIT THE RUNCASE FILE
-
-IMPORTANT: runcase does not compile your program. If you
-make changes, press BUILD before typing runcase.
-
-All test cases are in the .tar.gz file; you can download them
-to your own machine if you like.
-
+Prog := Sl
+Sl := SC { Sl } | Stmt SC { Sl }
+Stmt := PrintStmt | PrintlnStmt | RepeatStmt | Expr
+PrintStmt := PRINT Expr
+PrintlnStmt := PRINTLN Expr
+RepeatStmt:= Repeat Expr BEGIN Stmt END
+Expr := Sum { EQ Sum }
+Sum := Prod { (PLUS | MINUS) Prod }
+Prod := Primary { (STAR | SLASH) Primary }
+Primary := IDENT | ICONST | SCONST | LPAREN Expr RPAREN
