@@ -1,0 +1,22 @@
+This is a multi-part assignment.
+
+The pulldown on the upper left lets you select
+which part you are working on.
+
+The runcase shell script is provided to allow you
+to run just a single test case.
+
+If you type "runcase" you will get a list of all the
+test cases, and what arguments are used for each case.
+
+If you type "runcase X" you will run only one case.
+For example, "runcase file6" will run test case "file6".
+
+DO NOT EDIT THE RUNCASE FILE
+
+IMPORTANT: runcase does not compile your program. If you
+make changes, press BUILD before typing runcase.
+
+All test cases are in the .tar.gz file; you can download them
+to your own machine if you like.
+
